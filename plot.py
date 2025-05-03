@@ -95,11 +95,11 @@ def binary_cross_entropy(y_hat, y):
 def draw_cost_function():
     # Values of y_hat close to 0 and 1
     y_hat = np.linspace(0.01, 0.99, 200)
-    y_values = [0, 0.25, 0.5, 0.75, 1]
+    y_values = [0, 1]
 
     for y in y_values:
         loss = binary_cross_entropy(y_hat, y)
-        plt.plot(y_hat, loss, label=f"$y={y}")
+        plt.plot(y_hat, loss, label=f"y={y}")
 
     plt.xlabel("y_hat (Predicted Probability)")
     plt.ylabel("Loss")
