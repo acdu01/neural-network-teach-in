@@ -87,6 +87,29 @@ def draw_network(n, weights, biases):
     plt.show()
 
 
+def binary_cross_entropy(y_hat, y):
+    # Binary cross-entropy loss function
+    return -(y * np.log(y_hat) + (1 - y) * np.log(1 - y_hat))
+
+
+def draw_cost_function():
+    # Values of y_hat close to 0 and 1
+    y_hat = np.linspace(0.01, 0.99, 200)
+    y_values = [0, 0.25, 0.5, 0.75, 1]
+
+    for y in y_values:
+        loss = binary_cross_entropy(y_hat, y)
+        plt.plot(y_hat, loss, label=f"$y={y}")
+
+    plt.xlabel("y_hat (Predicted Probability)")
+    plt.ylabel("Loss")
+    plt.title("Binary Cross-Entropy Loss for Multiple y Values")
+    plt.legend()
+    plt.grid(True)
+    plt.ylim(0, 3)
+    plt.show()
+
+
 def plot_cost_surface(
     A0, Y, feed_forward, cost_fn, W1, w1_idx=(0, 0), w2_idx=(1, 0), grid_size=50
 ):
