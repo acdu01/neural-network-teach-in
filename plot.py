@@ -163,3 +163,12 @@ def plot_inputs_by_output(A0, Y):
     plt.legend()
     plt.grid(True)
     plt.show()
+
+
+def plot_epochs_costs(epochs, costs):
+    plt.plot(epochs, costs)
+    plt.xlabel("Epoch")
+    plt.ylabel("Cost")
+    plt.title("Cost vs. Epoch")
+    plt.grid(True)
+    plt.show()
